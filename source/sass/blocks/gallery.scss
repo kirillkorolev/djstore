@@ -1,0 +1,343 @@
+.gallery__speakers {
+  background-color: $light-blue;
+  width: 50%;
+}
+
+.gallery__room {
+  width: 50%;
+  background-position: left 0 top 2px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../img/backgrounds/bg-room-desktop@1x.jpg");
+  position: relative;
+  background-color: $pale-blue;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/backgrounds/bg-room-desktop@2x.jpg");
+  }
+}
+
+.gallery {
+  display: flex;
+}
+
+.gallery__moninors {
+  display: block;
+  width: 100%;
+}
+
+.gallery__room-moninor-left {
+  display: block;
+  width: 72px;
+  height: 98px;
+}
+
+.gallery__room-moninor-right {
+  display: block;
+  width: 73px;
+  height: 99px;
+}
+
+.gallery__room-wrap {
+  display: flex;
+  justify-content: space-between;
+  max-width: 590px;
+  width: 60%;
+  position: relative;
+  padding-top: 6%;
+  margin-left: 19%;
+}
+
+.gallery__button {
+  @include reset-button;
+
+  position: absolute;
+  top: 58%;
+  left: 14px;
+
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: $blue;
+
+  z-index: 2;
+}
+
+.gallery__button:hover,
+.gallery__button:focus {
+  background-color: $navy-blue;
+}
+
+.gallery__button:active {
+  opacity: 0.7;
+}
+
+.gallery__decor {
+  position: absolute;
+  top: 58%;
+  right: 20px;
+  mix-blend-mode: screen;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: 1px solid $blue;
+  background-color: rgba(57, 125, 255, 0.15);
+}
+
+.gallery__decor::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  border: 1px solid $blue;
+  background-color: rgba(57, 125, 255, 0.15);
+}
+
+.gallery__button::before {
+  position: absolute;
+  content: "";
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  border: 1px solid $blue;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(57, 125, 255, 0.15);
+  mix-blend-mode: screen;
+}
+
+.gallery__button span {
+  position: relative;
+}
+
+.gallery__button span::after,
+.gallery__button span::before {
+  position: absolute;
+  content: "";
+  background-color: $white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gallery__button span::after {
+  width: 9px;
+  height: 2px;
+}
+
+.gallery__button span::before {
+  height: 9px;
+  width: 2px;
+}
+
+.gallery__description-popup {
+  display: block;
+  position: absolute;
+  left: 33px;
+  top: -86px;
+  background-color: $white;
+  width: 352px;
+  border-radius: 10px;
+  padding: 9px 12px 12px 24px;
+  background-repeat: no-repeat;
+  background-image: url("../img/icons/icon-monitor.svg");
+  background-size: 71px 71px;
+  background-position: top 4px right 27px;
+
+  z-index: 5;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.gallery__description-popup::after {
+  position: absolute;
+  content: "";
+  border: 10px solid transparent;
+  border-top: 10px solid $white;
+  bottom: -19px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.gallery__monitor-name {
+  width: 154px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 7px;
+}
+
+.gallery__advantages-list {
+  @include reset-list;
+}
+
+.gallery__advantage {
+  margin-left: 24px;
+  font-size: 12px;
+  position: relative;
+}
+
+.gallery__advantage::before,
+.gallery__advantage::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  background-color: $blue;
+}
+
+.gallery__advantage::before {
+  width: 16px;
+  height: 16px;
+  opacity: 0.15;
+  left: -24px;
+  top: 0;
+}
+
+.gallery__advantage::after {
+  width: 6px;
+  height: 6px;
+  left: -19px;
+  top: 5px;
+}
+
+.gallery__advantage:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.gallery__close-button {
+  @include reset-button;
+
+  position: absolute;
+  top: 11px;
+  right: 14px;
+  width: 15px;
+  height: 15px;
+}
+
+.gallery__close-button::after,
+.gallery__close-button::before {
+  position: absolute;
+  content: "";
+  background-color: $black;
+  opacity: 0.8;
+  height: 2px;
+  width: 15px;
+  top: 0;
+  left: 0;
+}
+
+.gallery__close-button::after {
+  transform: rotate(-45deg);
+}
+
+.gallery__close-button::before {
+  transform: rotate(45deg);
+}
+
+.gallery__close-button:hover::after,
+.gallery__close-button:focus::after,
+.gallery__close-button:hover::before,
+.gallery__close-button:focus::before {
+  background-color: $blue;
+}
+
+.gallery__close-button:active {
+  opacity: 0.5;
+}
+
+
+@media (max-width: $mobile-width) {
+  .gallery__room {
+    background-image: url("../img/backgrounds/bg-room-mobile@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/backgrounds/bg-room-mobile@2x.jpg");
+    }
+  }
+
+  .gallery__button {
+    width: 20px;
+    height: 20px;
+    top: 63%;
+    left: 0;
+  }
+
+  .gallery__button::before {
+    width: 40px;
+    height: 40px;
+    border: 0.315068px solid $blue;
+  }
+
+  .gallery__button span::before {
+    height: 7px;
+  }
+
+  .gallery__button span::after {
+    width: 7px;
+  }
+
+  .gallery__decor {
+    width: 20px;
+    height: 20px;
+    top: 63%;
+    right: 0;
+  }
+
+  .gallery__decor::before {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery__room-moninor-left {
+    width: 18px;
+    height: 25px;
+  }
+
+  .gallery__room-moninor-right {
+    width: 18px;
+    height: 24px;
+  }
+
+  .gallery__room-wrap {
+    width: 80%;
+    padding-top: 42px;
+    margin-left: 10%;
+  }
+
+  .gallery__description-popup {
+    left: -100%;
+    width: 200%;
+    top: -173px;
+    padding: 15px 42px 19px 24px;
+    background-position: top 9px right 27px;
+    background-size: 60px 60px;
+  }
+
+  .gallery__monitor-name {
+    font-size: 16px;
+    line-height: 21px;
+    width: 144px;
+    margin-bottom: 11px;
+  }
+
+  .gallery__advantage:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
+  .gallery__close-button {
+    top: 20px;
+    right: 11px;
+  }
+
+  .gallery__description-popup::after {
+    left: 58%;
+  }
+}

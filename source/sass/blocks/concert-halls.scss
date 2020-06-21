@@ -1,0 +1,292 @@
+.concert-halls {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/backgrounds/bg-concert-halls-desktop@1x.png");
+  background-position: 0 0;
+  position: relative;
+  background-color: $beige;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/backgrounds/bg-concert-halls-desktop@2x.png");
+  }
+}
+
+.concert-halls__wrap {
+  color: $white;
+  max-width: 590px;
+  width: 30.73%;
+  display: flex;
+  flex-direction: column;
+  padding: 123px 0 208px;
+  margin-left: 20.31%;
+}
+
+.concert-halls__title {
+  margin: 0 0 12px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.concert-halls__slogan {
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 63px;
+  margin-bottom: 24px;
+}
+
+.concert-halls__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 54px;
+}
+
+.concert-halls__buttons-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.concert-halls__callback,
+.concert-halls__briefing {
+  @include reset-button;
+
+  width: 186px;
+  display: inline-block;
+  vertical-align: top;
+  color: $white;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+
+  border-radius: 8px;
+  padding: 13px 8px;
+}
+
+.concert-halls__callback {
+  border: 1px solid $white;
+  margin-right: 24px;
+  margin-bottom: 10px;
+}
+
+.concert-halls__briefing {
+  background-color: $blue;
+  margin-bottom: 10px;
+}
+
+.concert-halls__callback:hover,
+.concert-halls__callback:focus {
+  background-color: $navy-blue;
+  border-color: $navy-blue;
+}
+
+.concert-halls__briefing:hover,
+.concert-halls__briefing:focus {
+  background-color: $navy-blue;
+}
+
+.concert-halls__callback:active,
+.concert-halls__briefing:active {
+  opacity: 0.7;
+}
+
+.concert-halls__text br {
+  display: none;
+}
+
+.concert-halls__number {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 78px;
+  color: $blue;
+  letter-spacing: 0.02em;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.concert-halls__advantage {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 22px;
+  width: 282px;
+}
+
+.concert-halls__item {
+  padding: 16px 34px 20px 38px;
+  width: 354px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.concert-halls__slider {
+  position: absolute;
+  top: 185px;
+  right: 1px;
+  max-width: 553px;
+  width: 28.81%;
+  min-width: 355px;
+}
+
+.concert-halls__slider .slick-track {
+  display: flex;
+}
+
+
+.concert-halls__slider .slick-list {
+  overflow: hidden;
+}
+
+.concert-halls__slider .slick-arrow {
+  font-size: 0;
+  background-color: $blue;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  bottom: -17px;
+  outline: none;
+  cursor: pointer;
+}
+
+.concert-halls__slider .slick-arrow::before,
+.concert-halls__slider .slick-arrow::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: $white;
+}
+
+.concert-halls__slider .slick-prev::before {
+  transform: rotate(-45deg);
+  top: 11px;
+  left: 9px;
+}
+
+.concert-halls__slider .slick-prev::after {
+  transform: rotate(45deg);
+  bottom: 12px;
+  left: 9px;
+}
+
+.concert-halls__slider .slick-prev {
+  left: 40px;
+}
+
+.concert-halls__slider .slick-next {
+  left: 115px;
+}
+
+.concert-halls__slider .slick-next::before {
+  transform: rotate(45deg);
+  top: 11px;
+  right: 9px;
+}
+
+.concert-halls__slider .slick-next::after {
+  transform: rotate(-45deg);
+  bottom: 12px;
+  right: 9px;
+}
+
+.concert-halls__slider .slick-disabled {
+  background-color: rgba(186, 209, 255, 0.1);
+}
+
+.concert-halls__slider .slick-arrow:hover,
+.concert-halls__slider .slick-arrow:focus {
+  background-color: $navy-blue;
+}
+
+.concert-halls__slider .slick-arrow:active {
+  opacity: 0.7;
+}
+
+.concert-halls__slider .slick-disabled::before,
+.concert-halls__slider .slick-disabled::after {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.concert-halls__slider .slick-disabled:hover,
+.concert-halls__slider .slick-disabled:focus {
+  cursor: auto;
+  background-color: rgba(186, 209, 255, 0.1);
+}
+
+.concert-halls__slider .slick-disabled:active {
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .concert-halls__wrap {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .concert-halls__slider {
+    display: none;
+  }
+
+  .concert-halls__title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .concert-halls__slogan {
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 22px;
+  }
+
+  .concert-halls__text {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 32px;
+  }
+
+  .concert-halls__text br {
+    display: inline;
+  }
+
+  .concert-halls__callback,
+  .concert-halls__briefing {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 15px;
+    padding: 12px 8px 11px;
+  }
+
+  .concert-halls__wrap {
+    margin-left: 0;
+    width: auto;
+    padding: 36px 6% 45px 4%;
+  }
+
+  .concert-halls {
+    background-image: url("../img/backgrounds/bg-concert-halls-mobile@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/backgrounds/bg-concert-halls-mobile@2x.png");
+    }
+  }
+
+  .concert-halls__callback {
+    margin-right: 16px;
+    width: 159px;
+  }
+
+  .concert-halls__briefing {
+    width: 156px;
+  }
+
+  .concert-halls__buttons-block {
+    flex-wrap: wrap;
+  }
+}
