@@ -15,7 +15,7 @@
   var pageHeader = document.querySelector('.page-header');
   var menuButton = pageHeader.querySelector('.js-open-menu');
 
-  var openDiscussPopupButton = document.querySelector('.js-open-discuss-popup');
+  var openDiscussPopupButtons = document.querySelectorAll('.js-open-discuss-popup');
   var discussPopup = document.querySelector('.discuss');
   var closeDiscussButton = discussPopup.querySelector('.js-discuss-close');
   var blackout = document.querySelector('.blackout');
@@ -24,7 +24,7 @@
   var inputPhone = discussPopup.querySelector('#discuss-phone');
   var checkBox = discussPopup.querySelector('#discuss-confirmation');
 
-  var submitButton = discussPopup.querySelector('.js-discuss-submit');
+  // var submitButton = discussPopup.querySelector('.js-discuss-submit');
 
   var gallery = document.querySelector('.gallery');
   var openDescriptionButton = gallery.querySelector('.js-open-description');
@@ -133,13 +133,15 @@
     }
   });
 
-  openDiscussPopupButton.addEventListener('click', function () {
-    openPopup(discussPopup, 'discuss--hidden');
+  openDiscussPopupButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      openPopup(discussPopup, 'discuss--hidden');
 
-    blockBackground();
+      blockBackground();
 
-    document.addEventListener('keydown', onEscPressDiscussPopup);
-    blackout.addEventListener('click', closeDiscussOnButtonClick);
+      document.addEventListener('keydown', onEscPressDiscussPopup);
+      blackout.addEventListener('click', closeDiscussOnButtonClick);
+    });
   });
 
   closeDiscussButton.addEventListener('click', closeDiscuss);
@@ -191,16 +193,60 @@
     }
   };
 
-  submitButton.addEventListener('click', function (evt) {
+  var discussForm = document.querySelector('.discuss__form');
+
+  var TIMEOUT = 1000;
+  var OK_CODE = 200;
+
+  var createXhr = function (url, method, onLoad, onError) {
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+
+    xhr.addEventListener('load', function () {
+      if (xhr.status === OK_CODE) {
+        onLoad(xhr.response);
+      } else {
+        onError('Cтатус ответа: ' + xhr.status + ' ' + xhr.statusText);
+      }
+    });
+
+    xhr.addEventListener('error', function () {
+      onError('Произошла ошибка соединения');
+    });
+
+    xhr.addEventListener('timeout', function () {
+      onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
+    });
+
+    xhr.timeout = TIMEOUT;
+
+    xhr.open(method, url);
+    return xhr;
+  };
+
+
+  var send = function (data, onLoad, onError) {
+    var url = '';
+    var xhr = createXhr(url, 'POST', onLoad, onError);
+    xhr.send(data);
+  };
+
+  var activateSucces = function () {
+    closeDiscuss();
+    openPopup(successPopup, 'success--hidden');
+    blockBackground();
+    document.addEventListener('keydown', onEscPressSuccessPopup);
+    blackout.addEventListener('click', closeSuccessOnButtonClick);
+  };
+
+  discussForm.addEventListener('submit', function (evt) {
     if (validateName(inputName, 'discuss__input--error') && validatePhone(inputPhone, 'discuss__input--error') && validateCheckbox(checkBox, 'discuss__checkbox-input--error')) {
+
+      var formData = new FormData(discussForm);
+
+
+      send(formData, activateSucces(), activateSucces());
       evt.preventDefault();
-      closeDiscuss();
-      openPopup(successPopup, 'success--hidden');
-
-      blockBackground();
-
-      document.addEventListener('keydown', onEscPressSuccessPopup);
-      blackout.addEventListener('click', closeSuccessOnButtonClick);
     }
   });
 
