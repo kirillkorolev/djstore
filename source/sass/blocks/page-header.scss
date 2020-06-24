@@ -173,11 +173,47 @@
 
 @media (max-width: $mobile-width) {
   .page-header {
+    height: 747px;
+    overflow-y: scroll;
+
+    &--menu-closed {
+      height: auto;
+
+      .page-header__menu-button span {
+        background-color: $black;
+      }
+
+      .pager-header__menu-button span {
+        background-color: $black;
+      }
+
+      .page-header__menu-button span::after,
+      .page-header__menu-button span::before {
+        transform: none;
+        transform-origin: 50% 50%;
+        transition: top 0.3s 0.3s, transform 0.3s;
+      }
+
+      .page-header__menu-button span::after {
+        top: -6px;
+      }
+
+      .page-header__menu-button span::before {
+        top: 6px;
+      }
+
+      .page-header__mobile-menu {
+        display: none;
+      }
+
+      .page-header__menu-button:hover span,
+      .page-header__menu-button:focus span {
+        background-color: $blue;
+      }
+    }
 
     &--transparent {
       background-color: $light-grey;
-
-      // transition: none;
 
       .main-nav__link,
       .page-header__mail .page-header__mail-icon,
@@ -271,42 +307,6 @@
 
   .page-header__menu-button:active {
     opacity: 0.7;
-  }
-
-  .page-header {
-    &--menu-closed {
-      .page-header__menu-button span {
-        background-color: $black;
-      }
-
-      .pager-header__menu-button span {
-        background-color: $black;
-      }
-
-      .page-header__menu-button span::after,
-      .page-header__menu-button span::before {
-        transform: none;
-        transform-origin: 50% 50%;
-        transition: top 0.3s 0.3s, transform 0.3s;
-      }
-
-      .page-header__menu-button span::after {
-        top: -6px;
-      }
-
-      .page-header__menu-button span::before {
-        top: 6px;
-      }
-
-      .page-header__mobile-menu {
-        display: none;
-      }
-
-      .page-header__menu-button:hover span,
-      .page-header__menu-button:focus span {
-        background-color: $blue;
-      }
-    }
   }
 
   .page-header__mobile-header {
