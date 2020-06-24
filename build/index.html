@@ -181,16 +181,42 @@
   <main>
     <h1 class="visually-hidden">Dj Store - магазин музыкального оборудования</h1>
     <section class="concert-halls">
-      <div class="concert-halls__wrap">
-        <h2 class="concert-halls__title">Оснащение конференц залов</h2>
-        <div class="concert-halls__slogan">Видео конференции</div>
-        <p class="concert-halls__text">Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и<br>онлайн-трансляции контента.</p>
-        <div class="concert-halls__buttons-block">
-          <button class="concert-halls__callback js-open-discuss-popup" type="button">Обратный звонок</button>
-          <button class="concert-halls__briefing" type="button">Заполнить бриф</button>
+      <h2 class="visually-hidden">Оснащение конференц залов</h2>
+      <div class="concert-halls__slideshow">
+        <div class="concert-halls__item-slideshow">
+          <div class="concert-halls__wrap">
+            <div class="concert-halls__title">Оснащение конференц залов</div>
+            <div class="concert-halls__slogan">Видео конференции</div>
+            <p class="concert-halls__text">Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и<br>онлайн-трансляции контента.</p>
+            <div class="concert-halls__buttons-block">
+              <button class="concert-halls__callback js-open-discuss-popup" type="button">Обратный звонок</button>
+              <button class="concert-halls__briefing" type="button">Заполнить бриф</button>
+            </div>
+          </div>
+        </div>
+        <div class="concert-halls__item-slideshow">
+          <div class="concert-halls__wrap">
+            <div class="concert-halls__title">Оснащение конференц залов</div>
+            <div class="concert-halls__slogan">Видео конференции2</div>
+            <p class="concert-halls__text">Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и<br>онлайн-трансляции контента.</p>
+            <div class="concert-halls__buttons-block">
+              <button class="concert-halls__callback js-open-discuss-popup" type="button">Обратный звонок</button>
+              <button class="concert-halls__briefing" type="button">Заполнить бриф</button>
+            </div>
+          </div>
+        </div>
+        <div class="concert-halls__item-slideshow">
+          <div class="concert-halls__wrap">
+            <div class="concert-halls__title">Оснащение конференц залов</div>
+            <div class="concert-halls__slogan">Видео конференции3</div>
+            <p class="concert-halls__text">Профессиональное оборудование для конференц-залов предназначено для проведения и организации презентаций, совещаний, бизнес-тренингов и<br>онлайн-трансляции контента.</p>
+            <div class="concert-halls__buttons-block">
+              <button class="concert-halls__callback js-open-discuss-popup" type="button">Обратный звонок</button>
+              <button class="concert-halls__briefing" type="button">Заполнить бриф</button>
+            </div>
+          </div>
         </div>
       </div>
-
       <div class="concert-halls__slider">
         <div class="concert-halls__item">
           <span class="concert-halls__number">01</span>
@@ -202,18 +228,6 @@
         </div>
         <div class="concert-halls__item">
           <span class="concert-halls__number">03</span>
-          <div class="concert-halls__advantage">Применение инновационных решений для демонстрации культурных и исторических реликвий – актуальная тенденция, которая успешно применяется в музеях и на площадках альтернативного искусства.</div>
-        </div>
-        <div class="concert-halls__item">
-          <span class="concert-halls__number">04</span>
-          <div class="concert-halls__advantage">Применение инновационных решений для демонстрации культурных и исторических реликвий – актуальная тенденция, которая успешно применяется в музеях и на площадках альтернативного искусства.</div>
-        </div>
-        <div class="concert-halls__item">
-          <span class="concert-halls__number">05</span>
-          <div class="concert-halls__advantage">Применение инновационных решений для демонстрации культурных и исторических реликвий – актуальная тенденция, которая успешно применяется в музеях и на площадках альтернативного искусства.</div>
-        </div>
-        <div class="concert-halls__item">
-          <span class="concert-halls__number">06</span>
           <div class="concert-halls__advantage">Применение инновационных решений для демонстрации культурных и исторических реликвий – актуальная тенденция, которая успешно применяется в музеях и на площадках альтернативного искусства.</div>
         </div>
       </div>
@@ -230,7 +244,20 @@
       </div>
       <div class="gallery__room">
         <div class="gallery__room-wrap">
-          <button class="gallery__button js-open-description" type="button" aria-label="открыть описание"><span></span></button>
+          <div class="gallery__button-wrap">
+            <button class="gallery__button js-open-description" type="button" aria-label="открыть описание"><span></span></button>
+
+            <div class="gallery__description-popup gallery__description-popup--hidden">
+              <button class="gallery__close-button js-close-description" type="button" aria-label="закрыть описание"></button>
+              <div class="gallery__monitor-name">Electro-Voice EVID 4.2</div>
+              <ul class="gallery__advantages-list">
+                <li class="gallery__advantage">Очень мягкое звучание.</li>
+                <li class="gallery__advantage">Чувствительность — 89 дБ.</li>
+                <li class="gallery__advantage">Пиковая мощность — 400 Вт.</li>
+                <li class="gallery__advantage">Степень влагозащищенности IP34.</li>
+              </ul>
+            </div>
+          </div>
           <div class="gallery__decor"></div>
           <picture>
             <source type="image/webp" media="(max-width: 767px)" srcset="./img/pictures/room-monitor-left-mobile@1x.webp, ./img/pictures/room-monitor-left-mobile@2x.webp 2x">
@@ -245,16 +272,6 @@
             <img class="gallery__room-moninor-right" src="./img/pictures/room-monitor-right-desktop@1x.png" srcset="./img/pictures/room-monitor-right-desktop@2x.png" alt="монитор №2">
           </picture>
         </div>
-        <div class="gallery__description-popup gallery__description-popup--hidden">
-          <button class="gallery__close-button js-close-description" type="button" aria-label="закрыть описание"></button>
-          <div class="gallery__monitor-name">Electro-Voice EVID 4.2</div>
-          <ul class="gallery__advantages-list">
-            <li class="gallery__advantage">Очень мягкое звучание.</li>
-            <li class="gallery__advantage">Чувствительность — 89 дБ.</li>
-            <li class="gallery__advantage">Пиковая мощность — 400 Вт.</li>
-            <li class="gallery__advantage">Степень влагозащищенности IP34.</li>
-          </ul>
-        </div>
       </div>
     </section>
   </main>
@@ -262,18 +279,18 @@
     <button class="discuss__close-button js-discuss-close" aria-label="закрыть окно" type="button"></button>
     <div class="discuss__question">Готовы обсудить проект?</div>
     <div class="discuss__description">Заполните форму ниже и мы свяжемся с вами.</div>
-    <form class="discuss__form" method="POST">
+    <form class="discuss__form" action="#" method="POST">
       <fieldset class="discuss__form-item discuss__form-item--name">
-        <input class="discuss__input" id="discuss-name" type="text" placeholder="Имя*" minlength="2" maxlength="20" required="">
+        <input class="discuss__input" id="discuss-name" type="text" placeholder="Имя*" minlength="2" maxlength="20" required="" name="user-name">
         <label class="visually-hidden" for="discuss-name">Имя</label>
       </fieldset>
       <fieldset class="discuss__form-item discuss__form-item--phone">
-        <input class="discuss__input" id="discuss-phone" type="tel" placeholder="Телефон*" required="">
+        <input class="discuss__input" id="discuss-phone" type="tel" placeholder="Телефон*" required="" name="user-phone">
         <label class="visually-hidden" for="discuss-phone">Телефон</label>
       </fieldset>
       <div class="discuss__confirmation">
         <div class="discuss__checkbox-wrap">
-          <input class="visually-hidden discuss__checkbox-input" id="discuss-confirmation" type="checkbox">
+          <input class="visually-hidden discuss__checkbox-input" id="discuss-confirmation" type="checkbox" value="i confirm" name="confirmation">
           <label class="discuss__checkbox-label" for="discuss-confirmation"><span class="visually-hidden">Подтверждаю</span></label>
         </div>
         <div class="discuss__confirmation-text">Я согласен с условиями обработки <a class="discuss__safety-rules-link" href="#" target="_blank">персональных данных</a></div>

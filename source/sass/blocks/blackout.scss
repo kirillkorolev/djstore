@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 4999;
   width: 100vw;
   height: 100vh;
   background-color: $black;
@@ -15,7 +15,7 @@
 
   &--transparent {
     background-color: transparent;
-    z-index: 2;
+    z-index: 4999;
     display: block;
   }
 }

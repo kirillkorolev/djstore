@@ -1,28 +1,22 @@
 .concert-halls {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../img/backgrounds/bg-concert-halls-desktop@1x.png");
-  background-position: 0 0;
-  position: relative;
-  background-color: $beige;
 
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/backgrounds/bg-concert-halls-desktop@2x.png");
-  }
+  position: relative;
+
+  z-index: 1550;
 }
 
 .concert-halls__wrap {
   color: $white;
   max-width: 590px;
-  width: 30.73%;
+  width: 52%;
   display: flex;
   flex-direction: column;
-  padding: 123px 0 208px;
-  margin-left: 20.31%;
+  padding: 121px 0 137px;
+  margin-left: 20.2%;
 }
 
 .concert-halls__title {
-  margin: 0 0 12px;
+  margin-bottom: 12px;
 
   font-weight: 500;
   font-size: 18px;
@@ -105,6 +99,8 @@
   color: $blue;
   letter-spacing: 0.02em;
   font-feature-settings: "pnum" on, "lnum" on;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .concert-halls__advantage {
@@ -122,21 +118,40 @@
 
 .concert-halls__slider {
   position: absolute;
-  top: 185px;
+  top: 180px;
   right: 1px;
   max-width: 553px;
   width: 28.81%;
   min-width: 355px;
+  z-index: 1500;
 }
 
-.concert-halls__slider .slick-track {
+.concert-halls__slider .slick-track,
+.concert-halls__slideshow .slick-track {
   display: flex;
 }
 
-
-.concert-halls__slider .slick-list {
+.concert-halls__slider .slick-list,
+.concert-halls__slideshow .slick-list {
   overflow: hidden;
 }
+
+.concert-halls__slideshow {
+  width: 100%;
+}
+
+.concert-halls__item-slideshow {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/backgrounds/bg-concert-halls-desktop@1x.png");
+  background-position: 0 0;
+  background-color: $beige;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/backgrounds/bg-concert-halls-desktop@2x.png");
+  }
+}
+
 
 .concert-halls__slider .slick-arrow {
   font-size: 0;
@@ -266,10 +281,12 @@
   .concert-halls__wrap {
     margin-left: 0;
     width: auto;
-    padding: 36px 6% 45px 4%;
+    padding: 36px 6% 10px 4%;
   }
 
-  .concert-halls {
+  .concert-halls__item-slideshow {
+    width: 100%;
+
     background-image: url("../img/backgrounds/bg-concert-halls-mobile@1x.png");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {

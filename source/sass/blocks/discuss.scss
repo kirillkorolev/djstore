@@ -3,7 +3,7 @@
   background-color: $white;
 
   position: fixed;
-  z-index: 100;
+  z-index: 5000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -187,6 +187,8 @@
 
 .discuss__checkbox-label {
   position: relative;
+  padding-left: 282px;
+  cursor: pointer;
 }
 
 .discuss__checkbox-label::before {
@@ -242,7 +244,29 @@
     padding: 42px 16px 32px;
     left: 0%;
     transform: translate(0, -50%);
+
+    animation-name: mobileShow;
   }
+
+
+  @keyframes mobileShow {
+    0% {
+      transform: translate(0, -150%);
+    }
+
+    25% {
+      transform: translate(0, -50%);
+    }
+
+    50% {
+      transform: translate(0, -75%);
+    }
+
+    100% {
+      transform: translate(0, -50%);
+    }
+  }
+
 
   .discuss__question {
     font-size: 21px;
