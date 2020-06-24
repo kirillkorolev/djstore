@@ -1,8 +1,7 @@
 .concert-halls {
-
   position: relative;
-
   z-index: 1550;
+  margin-top: 93px;
 }
 
 .concert-halls__wrap {
@@ -243,6 +242,10 @@
 }
 
 @media (max-width: $mobile-width) {
+  .concert-halls {
+    margin-top: 113px;
+  }
+
   .concert-halls__slider {
     display: none;
   }

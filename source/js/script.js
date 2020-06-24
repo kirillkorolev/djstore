@@ -24,8 +24,6 @@
   var inputPhone = discussPopup.querySelector('#discuss-phone');
   var checkBox = discussPopup.querySelector('#discuss-confirmation');
 
-  // var submitButton = discussPopup.querySelector('.js-discuss-submit');
-
   var gallery = document.querySelector('.gallery');
   var openDescriptionButton = gallery.querySelector('.js-open-description');
   var closeDescriptionButton = gallery.querySelector('.js-close-description');
@@ -193,7 +191,7 @@
     }
   };
 
-  var discussForm = document.querySelector('.discuss__form');
+  var discussForm = discussPopup.querySelector('.discuss__form');
 
   var TIMEOUT = 1000;
   var OK_CODE = 200;
@@ -272,4 +270,25 @@
   closeDescriptionButton.addEventListener('click', function () {
     closeDescriptionPopup();
   });
+
+  var changeHeaderStyle = function () {
+    if (pageYOffset >= 20) {
+      pageHeader.classList.add('page-header--transparent');
+    }
+
+    if (pageYOffset >= 90) {
+      pageHeader.classList.add('page-header--hidden');
+    }
+
+    if (pageYOffset < 5 && (pageHeader.classList.contains('page-header--transparent') || pageHeader.classList.contains('page-header--hidden'))) {
+      pageHeader.classList.remove('page-header--transparent');
+      pageHeader.classList.remove('page-header--hidden');
+    }
+  };
+
+  window.addEventListener('scroll', changeHeaderStyle);
+
+  if (!pageHeader.classList.contains('page-header--menu-closed')) {
+    window.removeEventListener('scroll', changeHeaderStyle);
+  }
 })();

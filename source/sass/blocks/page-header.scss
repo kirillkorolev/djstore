@@ -134,14 +134,79 @@
   display: none;
 }
 
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  background-color: $light-grey;
+
+  &--transparent {
+    background-color: transparent;
+
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+
+    .main-nav__link,
+    .page-header__mail .page-header__mail-icon,
+    .page-header__mail .page-header__mail-address,
+    .page-header__call .page-header__phone-icon,
+    .page-header__call .page-header__call-title,
+    .page-header__call .page-header__call-number,
+    .page-header__logo-title,
+    .page-header__phone-icon {
+      color: $white;
+    }
+
+    .page-header__sub-title {
+      background-color: $white;
+      color: $blue;
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
 @media (max-width: $mobile-width) {
+  .page-header {
+
+    &--transparent {
+      background-color: $light-grey;
+
+      // transition: none;
+
+      .main-nav__link,
+      .page-header__mail .page-header__mail-icon,
+      .page-header__mail .page-header__mail-address,
+      .page-header__call .page-header__phone-icon,
+      .page-header__call .page-header__call-title,
+      .page-header__call .page-header__call-number,
+      .page-header__logo-title,
+      .page-header__phone-icon {
+        color: $black;
+      }
+
+      .page-header__sub-title {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+
+    &--hidden {
+      display: block;
+    }
+  }
+
   .page-header__contacts {
     display: none;
   }
 
   .page-header__wrap {
     position: relative;
-
     padding: 0;
   }
 
