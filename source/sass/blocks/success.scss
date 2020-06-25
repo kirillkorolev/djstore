@@ -154,6 +154,25 @@
     width: 100%;
     border-radius: 12px;
     padding: 85px 4.66% 35px;
+    animation-name: mobile-show;
+  }
+
+  @keyframes mobile-show {
+    0% {
+      transform: translate(0, -150%);
+    }
+
+    25% {
+      transform: translate(0, -50%);
+    }
+
+    50% {
+      transform: translate(0, -75%);
+    }
+
+    100% {
+      transform: translate(0, -50%);
+    }
   }
 
   .success__close-button::after,
